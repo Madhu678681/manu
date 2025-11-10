@@ -1,0 +1,163 @@
+/* Import font if not linked in HTML */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1605902711622-cfb43c4437d7?auto=format&fit=crop&w=1650&q=80")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Add a dark overlay */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+/* Login container */
+.login-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Login box */
+.login-box {
+  background: rgba(20, 20, 30, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  width: 340px;
+  padding: 40px 30px;
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Heading styles */
+.login-box h2 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.login-box p {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px #00eaff;
+}
+
+/* Main login button */
+.btn {
+  width: 100%;
+  background: linear-gradient(90deg, #ff0099, #ffbf00);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 187, 0, 0.4);
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #ffbf00, #ff0099);
+  box-shadow: 0 0 20px rgba(255, 187, 0, 0.6);
+}
+
+/* Social login buttons */
+.social-login {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.social-btn {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px #00eaff;
+}
+
+.google:hover { border-color: #ea4335; color: #ea4335; }
+.facebook:hover { border-color: #3b5998; color: #3b5998; }
+
+/* Footer note */
+.note {
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .login-box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
